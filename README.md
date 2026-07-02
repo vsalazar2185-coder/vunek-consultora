@@ -60,7 +60,7 @@ Los activos visuales oficiales del paquete VESP están en `public/assets/`:
 
 - `logo-vesp.png`: wordmark principal (extraído del lockup completo de `vesp-linea-grafica-referencia.png`; el archivo original venía recortado por abajo, cortando la base de las letras).
 - `logo-vesp-white.png`: variante negativa generada desde la silueta del wordmark principal.
-- `icon-vesp.png`: ícono principal con V y ala superior.
+- `icon-vesp.png`: ícono principal con V y ala superior (se limpió ruido de píxeles blancos casi opacos en los bordes del archivo original, visible al usarlo grande sobre fondos oscuros en el Hero).
 - `cumbre-horizonte.png`: silueta de cerros en cobre, extraída y recoloreada desde el ícono "VISIÓN" de `vesp-linea-grafica-referencia.png` (el gráfico original era una línea casi plana, poco reconocible como montaña).
 - `vesp-linea-grafica-referencia.png`: referencia visual y placeholder Open Graph.
 
@@ -160,5 +160,10 @@ Cambios solicitados tras revisión de copy:
 1. **Hero**: se eliminó el recuadro con el texto "Visión latinoamericana · Raíz territorial · Transformación aplicable." (no aportaba valor). En su lugar, el ícono VESP ahora aparece junto al wordmark "VESP" como un lockup de marca.
 2. **Soluciones ("Segunda etapa")**: eyebrow renombrado a "Catálogo de soluciones"; se quitó la frase "No vendemos cursos genéricos" (innecesaria/comparativa) dejando solo la afirmación positiva; se reordenó la lista de 9 soluciones agrupándola temáticamente: capacidades (rutas formativas, academias internas) → IA y automatización (agentes IA, asistentes, automatización, protocolos de uso responsable) → gobernanza y medición (tableros ejecutivos, modelos de transferencia).
 3. **Sobre VESP**: se reemplazó el heading y el párrafo que mencionaban "visión latinoamericana" y "raíz territorial" sin contexto suficiente. El nuevo texto (`brand.aboutHeading` y `brand.aboutParagraph` en `lib/constants.ts`) se enfoca en el método de trabajo (rigor ejecutivo, integración de estrategia/transformación digital/gestión organizacional) sin apoyarse en la geografía como argumento de identidad. La presencia en Chile, Paraguay, Colombia y América Latina se mantiene como dato concreto en el footer.
+4. Se quitaron los puntos finales en textos de listado (`problemCards`, títulos de `valuePillars`, `solutions`, `sectors`) que no correspondían por ser etiquetas cortas y no oraciones.
 
 Verificado con `npm run build` y visualmente en navegador.
+
+## Quinta iteración — limpieza de `icon-vesp.png`
+
+Se detectó ruido de píxeles blancos casi opacos alrededor de los trazos del ala y la V en `icon-vesp.png` (defecto del archivo original, no introducido en esta consultoría). Era invisible sobre fondo blanco, pero muy notorio al usarse grande sobre fondos oscuros (el ícono decorativo del Hero). Se limpió recalculando el canal alfa por distancia de color al blanco (mismo método usado para `logo-vesp.png`), eliminando los píxeles de fondo mal etiquetados como opacos sin alterar los degradados navy/cobre. Verificado componiendo el ícono sobre fondo oscuro antes y después del arreglo, y visualmente en el Hero real.
