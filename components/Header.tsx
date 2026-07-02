@@ -16,10 +16,10 @@ export function Header() {
           <Image
             alt="VESP"
             className="h-auto w-[138px]"
-            height={320}
+            height={309}
             priority
             src={assets.logo}
-            width={1140}
+            width={934}
           />
         </a>
 

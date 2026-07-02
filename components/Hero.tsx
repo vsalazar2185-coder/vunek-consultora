@@ -11,7 +11,7 @@ export function Hero() {
         alt=""
         aria-hidden="true"
         className="pointer-events-none absolute -bottom-16 left-1/2 z-0 w-[1200px] max-w-none -translate-x-1/2 opacity-70"
-        height={180}
+        height={260}
         priority
         src={assets.horizon}
         width={1600}
@@ -28,12 +28,18 @@ export function Hero() {
 
       <div className="section-shell relative z-10 flex min-h-[72svh] items-center py-12 sm:py-14">
         <div className="max-w-3xl">
-          <div className="mb-8 inline-flex items-center gap-3 rounded-md border border-white/16 bg-white/8 px-4 py-2 text-sm font-medium text-white/82">
-            <span className="h-2 w-2 rounded-full bg-vesp-copper" />
-            {brand.identity}
+          <div className="mb-6 flex items-center gap-4">
+            <Image
+              alt=""
+              aria-hidden="true"
+              className="h-14 w-auto sm:h-16 lg:h-20"
+              height={310}
+              priority
+              src={assets.icon}
+              width={340}
+            />
+            <h1 className="text-6xl font-semibold leading-none text-white sm:text-7xl lg:text-8xl">{brand.name}</h1>
           </div>
-
-          <h1 className="text-6xl font-semibold leading-none text-white sm:text-7xl lg:text-8xl">{brand.name}</h1>
           <p className="mt-6 max-w-2xl text-2xl font-semibold leading-tight text-white sm:text-3xl">
             {brand.descriptor}
           </p>

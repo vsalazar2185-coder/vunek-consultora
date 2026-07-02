@@ -58,10 +58,10 @@ public/
 
 Los activos visuales oficiales del paquete VESP están en `public/assets/`:
 
-- `logo-vesp.png`: wordmark principal.
+- `logo-vesp.png`: wordmark principal (extraído del lockup completo de `vesp-linea-grafica-referencia.png`; el archivo original venía recortado por abajo, cortando la base de las letras).
 - `logo-vesp-white.png`: variante negativa generada desde la silueta del wordmark principal.
 - `icon-vesp.png`: ícono principal con V y ala superior.
-- `cumbre-horizonte.png`: recurso gráfico cumbre/horizonte.
+- `cumbre-horizonte.png`: silueta de cerros en cobre, extraída y recoloreada desde el ícono "VISIÓN" de `vesp-linea-grafica-referencia.png` (el gráfico original era una línea casi plana, poco reconocible como montaña).
 - `vesp-linea-grafica-referencia.png`: referencia visual y placeholder Open Graph.
 
 Para reemplazarlos, conserva los mismos nombres de archivo o actualiza las rutas en `lib/constants.ts`.
@@ -143,3 +143,22 @@ Ejecutada a partir de `PROMPT_MEJORA_VESP.md`. La base de la primera iteración 
 3. Conectar el formulario de contacto a un proveedor real (Formspree, Resend, Supabase, HubSpot o API propia) siguiendo el comentario en `ContactSection.tsx`.
 4. Generar una imagen Open Graph definitiva de 1200×630 (hoy se reutiliza `vesp-linea-grafica-referencia.png`).
 5. Ejecutar `npm audit fix` cuando se revisen las vulnerabilidades reportadas por `npm install` (5 vulnerabilidades, en su mayoría en dependencias de desarrollo como ESLint).
+
+## Tercera iteración — corrección de assets visuales
+
+Se detectaron y corrigieron dos problemas en las imágenes de marca:
+
+1. **`logo-vesp.png` recortado**: el archivo original cortaba la base de las letras "VESP" (se veía "ESI" en vez de "ESP"). Se reemplazó extrayendo el lockup completo del wordmark desde `vesp-linea-grafica-referencia.png`, con el fondo removido por distancia de color (no por luminancia, para no alterar el degradado cobre) y recorte automático al contenido real. Nuevas dimensiones: 934×309 (antes 1140×320); se actualizó el `width`/`height` del `<Image>` en `Header.tsx`.
+2. **`cumbre-horizonte.png` irreconocible**: el gráfico decorativo original era casi una línea plana, no se entendía que representaba un cerro. Se extrajo el ícono de montaña de la sección "VISIÓN" en `vesp-linea-grafica-referencia.png`, se recoloreó a cobre institucional (para mantener visibilidad sobre los fondos navy donde se usa) y se compuso una silueta de tres picos superpuestos sobre un lienzo transparente de 1600×260 (antes 1600×180). Se actualizó el `height` del `<Image>` en `Hero.tsx`, `MethodSection.tsx` y `AboutSection.tsx`.
+
+Verificado con `npm run build` (compila limpio) y visualmente en navegador (desktop 1440×900).
+
+## Cuarta iteración — ajustes de contenido y jerarquía
+
+Cambios solicitados tras revisión de copy:
+
+1. **Hero**: se eliminó el recuadro con el texto "Visión latinoamericana · Raíz territorial · Transformación aplicable." (no aportaba valor). En su lugar, el ícono VESP ahora aparece junto al wordmark "VESP" como un lockup de marca.
+2. **Soluciones ("Segunda etapa")**: eyebrow renombrado a "Catálogo de soluciones"; se quitó la frase "No vendemos cursos genéricos" (innecesaria/comparativa) dejando solo la afirmación positiva; se reordenó la lista de 9 soluciones agrupándola temáticamente: capacidades (rutas formativas, academias internas) → IA y automatización (agentes IA, asistentes, automatización, protocolos de uso responsable) → gobernanza y medición (tableros ejecutivos, modelos de transferencia).
+3. **Sobre VESP**: se reemplazó el heading y el párrafo que mencionaban "visión latinoamericana" y "raíz territorial" sin contexto suficiente. El nuevo texto (`brand.aboutHeading` y `brand.aboutParagraph` en `lib/constants.ts`) se enfoca en el método de trabajo (rigor ejecutivo, integración de estrategia/transformación digital/gestión organizacional) sin apoyarse en la geografía como argumento de identidad. La presencia en Chile, Paraguay, Colombia y América Latina se mantiene como dato concreto en el footer.
+
+Verificado con `npm run build` y visualmente en navegador.

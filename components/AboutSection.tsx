@@ -8,7 +8,7 @@ export function AboutSection() {
         alt=""
         aria-hidden="true"
         className="absolute bottom-10 left-1/2 w-[1180px] max-w-none -translate-x-1/2 opacity-44"
-        height={180}
+        height={260}
         src={assets.horizon}
         width={1600}
       />
@@ -29,12 +29,8 @@ export function AboutSection() {
           </div>
 
           <div>
-            <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">{brand.identity}</h2>
-            <p className="mt-6 text-lg leading-8 text-white/74">
-              VESP nace como una firma consultora latinoamericana con una mirada ejecutiva, territorial y aplicada.
-              Integra estrategia, transformación digital y gestión organizacional para acompañar procesos de cambio que
-              requieren claridad, método e implementación.
-            </p>
+            <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">{brand.aboutHeading}</h2>
+            <p className="mt-6 text-lg leading-8 text-white/74">{brand.aboutParagraph}</p>
           </div>
         </div>
       </div>

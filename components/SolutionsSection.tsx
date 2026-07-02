@@ -6,12 +6,12 @@ export function SolutionsSection() {
       <div className="section-shell">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <p className="text-sm font-semibold text-vesp-copper">Segunda etapa</p>
+            <p className="text-sm font-semibold text-vesp-copper">Catálogo de soluciones</p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">
               Soluciones aplicables para acelerar la transformación.
             </h2>
             <p className="mt-6 text-lg leading-8 text-white/74">
-              No vendemos cursos genéricos. Diseñamos soluciones que instalan capacidades reales.
+              Diseñamos soluciones que instalan capacidades reales en la organización.
             </p>
           </div>
 

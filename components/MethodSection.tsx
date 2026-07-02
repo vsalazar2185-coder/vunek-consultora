@@ -9,7 +9,7 @@ export function MethodSection() {
         alt=""
         aria-hidden="true"
         className="absolute left-1/2 top-9 w-[980px] max-w-none -translate-x-1/2 opacity-26"
-        height={180}
+        height={260}
         src={assets.horizon}
         width={1600}
       />

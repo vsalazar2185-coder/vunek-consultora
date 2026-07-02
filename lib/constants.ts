@@ -28,7 +28,9 @@ export const brand = {
   descriptor: "Estrategia, transformación digital y gestión organizacional.",
   promise: "Convertimos desafíos organizacionales en soluciones claras, aplicables y medibles.",
   motto: "De la estrategia a la implementación.",
-  identity: "Visión latinoamericana · Raíz territorial · Transformación aplicable.",
+  aboutHeading: "Rigor ejecutivo para transformar decisiones en resultados.",
+  aboutParagraph:
+    "VESP acompaña procesos de transformación con una mirada ejecutiva y aplicada, integrando estrategia, transformación digital y gestión organizacional en un mismo método de trabajo. Colaboramos junto a equipos directivos para que cada decisión se traduzca en resultados medibles.",
   commercial:
     "Acompañamos a instituciones, empresas y organizaciones en procesos de transformación digital, mejora de la gestión organizacional y desarrollo de soluciones aplicables.",
   email: "contacto@vesp.com"
@@ -143,13 +145,13 @@ export const services = [
 
 export const solutions = [
   { title: "Rutas formativas por área.", Icon: Route },
+  { title: "Academias internas de transformación digital.", Icon: Building2 },
   { title: "Agentes IA por unidad funcional.", Icon: BrainCircuit },
   { title: "Agentes IA para gestión académica.", Icon: GraduationCap },
   { title: "Asistentes IA para reportería y análisis documental.", Icon: FileSearch },
-  { title: "Academias internas de transformación digital.", Icon: Building2 },
-  { title: "Tableros ejecutivos.", Icon: BarChart3 },
   { title: "Automatización de procesos críticos.", Icon: Workflow },
   { title: "Protocolos de uso responsable de IA.", Icon: ShieldCheck },
+  { title: "Tableros ejecutivos.", Icon: BarChart3 },
   { title: "Modelos de transferencia y evaluación de impacto.", Icon: Target }
 ];
 
