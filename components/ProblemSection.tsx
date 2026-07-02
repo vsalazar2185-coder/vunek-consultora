@@ -7,12 +7,12 @@ export function ProblemSection() {
     <section className="section-padding bg-[#F7F8FA]" id="problema">
       <div className="section-shell">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold text-vesp-copper">Problema que resolvemos</p>
+          <p className="text-sm font-semibold text-vesp-copper">Problemas que resolvemos</p>
           <h2 className="mt-4 text-3xl font-semibold leading-tight text-vesp-navy sm:text-4xl">
             Las organizaciones no necesitan más diagnósticos. Necesitan implementación.
           </h2>
           <p className="mt-6 text-lg leading-8 text-vesp-ink/74">
-            Muchas instituciones y empresas tienen estrategias dispersas, procesos poco claros, baja adopción
+            Muchas instituciones y empresas tienen estrategias fragmentadas, procesos poco claros, baja adopción
             tecnológica, datos subutilizados y equipos que no logran sostener el cambio. VESP acompaña esos desafíos
             desde el diagnóstico hasta la implementación medible.
           </p>

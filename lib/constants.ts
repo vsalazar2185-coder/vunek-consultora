@@ -54,7 +54,7 @@ export const navItems = [
 ];
 
 export const problemCards = [
-  "Estrategia dispersa",
+  "Estrategia fragmentada",
   "Transformación digital sin adopción",
   "Procesos poco claros",
   "Datos sin uso ejecutivo",
