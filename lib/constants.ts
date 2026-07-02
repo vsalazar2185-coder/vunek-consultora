@@ -54,27 +54,27 @@ export const navItems = [
 ];
 
 export const problemCards = [
-  "Estrategia dispersa.",
-  "Transformación digital sin adopción.",
-  "Procesos poco claros.",
-  "Datos sin uso ejecutivo.",
-  "Capacidades internas insuficientes.",
-  "Falta de medición."
+  "Estrategia dispersa",
+  "Transformación digital sin adopción",
+  "Procesos poco claros",
+  "Datos sin uso ejecutivo",
+  "Capacidades internas insuficientes",
+  "Falta de medición"
 ];
 
 export const valuePillars = [
   {
-    title: "Estrategia clara.",
+    title: "Estrategia clara",
     description: "Ordenamos el desafío, priorizamos decisiones y construimos una hoja de ruta realista.",
     Icon: Compass
   },
   {
-    title: "Implementación acompañada.",
+    title: "Implementación acompañada",
     description: "Trabajamos junto a equipos directivos y unidades clave para sostener el cambio.",
     Icon: Workflow
   },
   {
-    title: "Resultados medibles.",
+    title: "Resultados medibles",
     description: "Definimos indicadores, evidencias y mecanismos de seguimiento desde el inicio.",
     Icon: LineChart
   }
@@ -144,24 +144,24 @@ export const services = [
 ];
 
 export const solutions = [
-  { title: "Rutas formativas por área.", Icon: Route },
-  { title: "Academias internas de transformación digital.", Icon: Building2 },
-  { title: "Agentes IA por unidad funcional.", Icon: BrainCircuit },
-  { title: "Agentes IA para gestión académica.", Icon: GraduationCap },
-  { title: "Asistentes IA para reportería y análisis documental.", Icon: FileSearch },
-  { title: "Automatización de procesos críticos.", Icon: Workflow },
-  { title: "Protocolos de uso responsable de IA.", Icon: ShieldCheck },
-  { title: "Tableros ejecutivos.", Icon: BarChart3 },
-  { title: "Modelos de transferencia y evaluación de impacto.", Icon: Target }
+  { title: "Rutas formativas por área", Icon: Route },
+  { title: "Academias internas de transformación digital", Icon: Building2 },
+  { title: "Agentes IA por unidad funcional", Icon: BrainCircuit },
+  { title: "Agentes IA para gestión académica", Icon: GraduationCap },
+  { title: "Asistentes IA para reportería y análisis documental", Icon: FileSearch },
+  { title: "Automatización de procesos críticos", Icon: Workflow },
+  { title: "Protocolos de uso responsable de IA", Icon: ShieldCheck },
+  { title: "Tableros ejecutivos", Icon: BarChart3 },
+  { title: "Modelos de transferencia y evaluación de impacto", Icon: Target }
 ];
 
 export const sectors = [
-  { title: "Educación superior.", Icon: GraduationCap },
-  { title: "Empresas.", Icon: Building2 },
-  { title: "Instituciones públicas.", Icon: Landmark },
-  { title: "Organizaciones sociales.", Icon: Network },
-  { title: "Áreas corporativas.", Icon: BarChart3 },
-  { title: "Equipos directivos.", Icon: UsersRound }
+  { title: "Educación superior", Icon: GraduationCap },
+  { title: "Empresas", Icon: Building2 },
+  { title: "Instituciones públicas", Icon: Landmark },
+  { title: "Organizaciones sociales", Icon: Network },
+  { title: "Áreas corporativas", Icon: BarChart3 },
+  { title: "Equipos directivos", Icon: UsersRound }
 ];
 
 export const contactNeeds = [
