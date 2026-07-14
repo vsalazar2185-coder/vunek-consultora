@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { CalendarCheck, Menu, X } from "lucide-react";
 import { useState } from "react";
-import { assets, navItems } from "@/lib/constants";
+import { assets, brand, navItems } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
 export function Header() {
@@ -12,15 +12,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-vesp-navy/10 bg-white/88 backdrop-blur-xl">
       <div className="section-shell flex h-20 items-center justify-between gap-5">
-        <a aria-label="VESP inicio" className="flex items-center" href="#inicio">
-          <Image
-            alt="VESP"
-            className="h-auto w-[138px]"
-            height={309}
-            priority
-            src={assets.logo}
-            width={934}
-          />
+        <a aria-label={`${brand.name} inicio`} className="flex items-center gap-2.5" href="#inicio">
+          <Image alt="" aria-hidden="true" className="h-9 w-auto" height={310} priority src={assets.icon} width={340} />
+          <span className="text-xl font-bold tracking-tight text-vesp-navy">{brand.name}</span>
         </a>
 
         <nav aria-label="Navegación principal" className="hidden items-center gap-7 lg:flex">

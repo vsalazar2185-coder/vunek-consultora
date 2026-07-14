@@ -9,9 +9,9 @@ const inter = Inter({
   display: "swap"
 });
 
-const title = "VESP | Estrategia, transformación digital y gestión organizacional";
+const title = `${brand.name} | Estrategia, transformación digital y gestión organizacional`;
 const description =
-  "VESP acompaña a instituciones, empresas y organizaciones en procesos de transformación digital, mejora de la gestión organizacional y desarrollo de soluciones aplicables.";
+  `${brand.name} acompaña a instituciones, empresas y organizaciones en procesos de transformación digital, mejora de la gestión organizacional y desarrollo de soluciones aplicables.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

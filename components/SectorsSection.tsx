@@ -1,4 +1,4 @@
-import { sectors } from "@/lib/constants";
+import { brand, sectors } from "@/lib/constants";
 
 export function SectorsSection() {
   return (
@@ -11,7 +11,7 @@ export function SectorsSection() {
               Una metodología transversal para distintos contextos.
             </h2>
             <p className="mt-6 text-lg leading-8 text-vesp-ink/74">
-              VESP no se limita a un sector. Su metodología se adapta al contexto donde exista una necesidad concreta,
+              {brand.name} no se limita a un sector. Su metodología se adapta al contexto donde exista una necesidad concreta,
               una relación de confianza y posibilidad real de implementación.
             </p>
           </div>

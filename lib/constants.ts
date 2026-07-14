@@ -17,29 +17,33 @@ import {
   Workflow
 } from "lucide-react";
 
-export const siteUrl = "https://vesp.example";
+export const siteUrl = "https://vunek.example";
 
 // Reemplaza por tu ID real de https://formspree.io (Dashboard > New Form).
 // Ver instrucciones de configuración en README.md > "Conectar el formulario de contacto".
 export const formspreeId = "TU_FORM_ID";
 
 export const brand = {
-  name: "VESP",
+  name: "VUNEK",
   descriptor: "Estrategia, transformación digital y gestión organizacional.",
   promise: "Convertimos desafíos organizacionales en soluciones claras, aplicables y medibles.",
   motto: "De la estrategia a la implementación.",
   aboutHeading: "Rigor ejecutivo para transformar decisiones en resultados.",
   aboutParagraph:
-    "VESP acompaña procesos de transformación con una mirada ejecutiva y aplicada, integrando estrategia, transformación digital y gestión organizacional en un mismo método de trabajo. Colaboramos junto a equipos directivos para que cada decisión se traduzca en resultados medibles.",
+    "VUNEK acompaña procesos de transformación con una mirada ejecutiva y aplicada, integrando estrategia, transformación digital y gestión organizacional en un mismo método de trabajo. Colaboramos junto a equipos directivos para que cada decisión se traduzca en resultados medibles.",
   commercial:
     "Acompañamos a instituciones, empresas y organizaciones en procesos de transformación digital, mejora de la gestión organizacional y desarrollo de soluciones aplicables.",
-  email: "contacto@vesp.com"
+  email: "contacto@vunek.com"
 };
 
+// Nota: logo/logoWhite todavía muestran el wordmark "VESP" dibujado en la imagen
+// (heredado del rebrand). Header y Footer usan icon/iconWhite + texto {brand.name}
+// en su lugar. Reemplazar logo/logoWhite cuando exista un wordmark "VUNEK" real.
 export const assets = {
   logo: "/assets/logo-vesp.png",
   logoWhite: "/assets/logo-vesp-white.png",
   icon: "/assets/icon-vesp.png",
+  iconWhite: "/assets/icon-vesp-white.png",
   horizon: "/assets/cumbre-horizonte.png",
   ogImage: "/assets/vesp-linea-grafica-referencia.png"
 };

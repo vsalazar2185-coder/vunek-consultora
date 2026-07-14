@@ -9,7 +9,10 @@ export function Footer() {
       <div className="section-shell">
         <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-end">
           <div>
-            <Image alt="VESP" className="h-auto w-36" height={320} src={assets.logoWhite} width={1140} />
+            <div className="flex items-center gap-3">
+              <Image alt="" aria-hidden="true" className="h-10 w-auto" height={268} src={assets.iconWhite} width={305} />
+              <span className="text-2xl font-bold tracking-tight">{brand.name}</span>
+            </div>
             <p className="mt-3 max-w-xl text-white/72">{brand.descriptor}</p>
             <p className="mt-2 font-semibold text-vesp-copper">{brand.motto}</p>
             <p className="mt-5 text-sm text-white/56">{footerCountries}</p>

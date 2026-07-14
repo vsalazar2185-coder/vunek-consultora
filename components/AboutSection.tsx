@@ -16,14 +16,14 @@ export function AboutSection() {
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div className="flex items-center gap-5">
             <Image
-              alt="Ícono VESP"
+              alt={`Ícono ${brand.name}`}
               className="h-auto w-28 rounded-lg bg-white p-4 shadow-soft sm:w-36"
               height={310}
               src={assets.icon}
               width={340}
             />
             <div>
-              <p className="text-sm font-semibold text-vesp-copper">Sobre VESP</p>
+              <p className="text-sm font-semibold text-vesp-copper">Sobre {brand.name}</p>
               <p className="mt-2 text-2xl font-semibold">{brand.name}</p>
             </div>
           </div>

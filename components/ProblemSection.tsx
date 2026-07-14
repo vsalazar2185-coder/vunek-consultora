@@ -1,5 +1,5 @@
 import { AlertCircle } from "lucide-react";
-import { problemCards } from "@/lib/constants";
+import { brand, problemCards } from "@/lib/constants";
 import { Card } from "@/components/ui/Card";
 
 export function ProblemSection() {
@@ -13,8 +13,8 @@ export function ProblemSection() {
           </h2>
           <p className="mt-6 text-lg leading-8 text-vesp-ink/74">
             Muchas instituciones y empresas tienen estrategias fragmentadas, procesos poco claros, baja adopción
-            tecnológica, datos subutilizados y equipos que no logran sostener el cambio. VESP acompaña esos desafíos
-            desde el diagnóstico hasta la implementación medible.
+            tecnológica, datos subutilizados y equipos que no logran sostener el cambio. {brand.name} acompaña esos
+            desafíos desde el diagnóstico hasta la implementación medible.
           </p>
         </div>
 

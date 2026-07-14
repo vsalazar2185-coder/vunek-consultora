@@ -1,6 +1,8 @@
-# VESP Consultora Landing
+# VUNEK Consultora Landing
 
-Landing page profesional para VESP, una firma consultora latinoamericana orientada a estrategia, transformación digital y gestión organizacional. El sitio presenta la propuesta de valor, el Método VESP, líneas de servicio, soluciones aplicables, sectores de trabajo y un formulario de contacto preparado para integración futura.
+Landing page profesional para VUNEK, una firma consultora latinoamericana orientada a estrategia, transformación digital y gestión organizacional. El sitio presenta la propuesta de valor, el Método VESP (metodología propia, con su nombre histórico), líneas de servicio, soluciones aplicables, sectores de trabajo y un formulario de contacto preparado para integración futura.
+
+> **Nota de marca**: el proyecto se rebrandeó de VESP a VUNEK. La metodología conserva su nombre original "Método VESP" (siglas Visión-Estrategia-Soluciones-Puesta en marcha) por decisión explícita del cliente. Ver detalle en "Sexta iteración" más abajo.
 
 ## Stack utilizado
 
@@ -56,13 +58,12 @@ public/
 
 ## Logos y activos
 
-Los activos visuales oficiales del paquete VESP están en `public/assets/`:
+Los activos visuales están en `public/assets/`. Los nombres de archivo conservan el prefijo `vesp-` por herencia de la marca anterior (ver "Sexta iteración" más abajo); el sitio ya muestra "VUNEK" como texto en todas partes:
 
-- `logo-vesp.png`: wordmark principal (extraído del lockup completo de `vesp-linea-grafica-referencia.png`; el archivo original venía recortado por abajo, cortando la base de las letras).
-- `logo-vesp-white.png`: variante negativa generada desde la silueta del wordmark principal.
-- `icon-vesp.png`: ícono principal con V y ala superior (se limpió ruido de píxeles blancos casi opacos en los bordes del archivo original, visible al usarlo grande sobre fondos oscuros en el Hero).
-- `cumbre-horizonte.png`: silueta de cerros en cobre, extraída y recoloreada desde el ícono "VISIÓN" de `vesp-linea-grafica-referencia.png` (el gráfico original era una línea casi plana, poco reconocible como montaña).
-- `vesp-linea-grafica-referencia.png`: referencia visual y placeholder Open Graph.
+- `logo-vesp.png` / `logo-vesp-white.png`: wordmark completo de la marca **anterior** (VESP). **Ya no se usan en el sitio** — pendiente de reemplazo por un wordmark VUNEK real.
+- `icon-vesp.png` / `icon-vesp-white.png`: símbolo (V + ala), sin letras — es marca-neutral y sí se sigue usando, junto al texto "VUNEK", en Header/Footer/Hero/Sobre Nosotros.
+- `cumbre-horizonte.png`: silueta decorativa de cerros en cobre, marca-neutral.
+- `vesp-linea-grafica-referencia.png`: hoja de referencia de la marca anterior; **todavía se usa como imagen Open Graph** (pendiente real, ver "Sexta iteración").
 
 Para reemplazarlos, conserva los mismos nombres de archivo o actualiza las rutas en `lib/constants.ts`.
 
@@ -93,7 +94,7 @@ Si más adelante prefieres otro proveedor (Resend, Supabase, HubSpot o una API p
 ## Pendientes recomendados
 
 - Conectar el formulario a un servicio real.
-- Comprar y configurar dominio y actualizar `siteUrl` en `lib/constants.ts` (hoy usa `https://vesp.example` como placeholder).
+- Comprar y configurar dominio y actualizar `siteUrl` en `lib/constants.ts` (hoy usa `https://vunek.example` como placeholder).
 - Optimizar SEO técnico con URL definitiva e imagen Open Graph final.
 - Agregar analytics.
 - Validar el logo final con diseñador.
@@ -167,3 +168,24 @@ Verificado con `npm run build` y visualmente en navegador.
 ## Quinta iteración — limpieza de `icon-vesp.png`
 
 Se detectó ruido de píxeles blancos casi opacos alrededor de los trazos del ala y la V en `icon-vesp.png` (defecto del archivo original, no introducido en esta consultoría). Era invisible sobre fondo blanco, pero muy notorio al usarse grande sobre fondos oscuros (el ícono decorativo del Hero). Se limpió recalculando el canal alfa por distancia de color al blanco (mismo método usado para `logo-vesp.png`), eliminando los píxeles de fondo mal etiquetados como opacos sin alterar los degradados navy/cobre. Verificado componiendo el ícono sobre fondo oscuro antes y después del arreglo, y visualmente en el Hero real.
+
+## Sexta iteración — rebrand VESP → VUNEK
+
+La marca cambió de nombre: **VESP → VUNEK**. Por decisión explícita del cliente, la metodología propia conserva su nombre histórico "Método VESP" (siglas Visión-Estrategia-Soluciones-Puesta en marcha) — no se tocó `MethodSection.tsx` ni el enlace "Conocer el Método VESP" del Hero.
+
+**Cambios de texto** (todos vía `lib/constants.ts` salvo donde se indica):
+
+- `brand.name`: `"VESP"` → `"VUNEK"` (se propaga automáticamente al `<title>`, metadata OG/Twitter, Hero, Footer, `AboutSection`, `ProblemSection`, `SectorsSection`, ya que todos esos textos usan `{brand.name}` en vez de un literal hardcodeado).
+- `brand.email`: `contacto@vesp.com` → `contacto@vunek.com`.
+- `siteUrl`: `https://vesp.example` → `https://vunek.example`.
+- `brand.aboutParagraph`: se cambió la mención literal de "VESP acompaña..." a `{brand.name}`.
+- `package.json` / `package-lock.json`: `name` actualizado a `vunek-consultora-landing`.
+
+**Problema de fondo — logos gráficos**: `logo-vesp.png` y `logo-vesp-white.png` son imágenes con el wordmark "VESP" dibujado en los píxeles (no texto real), heredadas de la marca anterior. No es posible "renombrarlas" a VUNEK sin rediseñar el wordmark completo, y no existe un archivo de referencia de VUNEK para extraerlo (a diferencia de VESP, que sí tenía `vesp-linea-grafica-referencia.png`). Solución aplicada mientras no exista un logo VUNEK real:
+
+- Se recortó únicamente el símbolo (V + ala, sin letras) de `logo-vesp-white.png`, generando el nuevo asset `icon-vesp-white.png` (305×268, transparente).
+- `Header.tsx` y `Footer.tsx` ya no usan las imágenes de wordmark completo (`assets.logo` / `assets.logoWhite`). Ahora muestran el símbolo (`assets.icon` / `assets.iconWhite`) junto al texto real `{brand.name}` ("VUNEK"), como un lockup ícono + texto — igual al patrón ya usado en el Hero.
+- `assets.logo` y `assets.logoWhite` quedan definidos en `lib/constants.ts` pero **sin uso** en el sitio; se conservan por si sirven de referencia de estilo al diseñar el wordmark VUNEK real.
+- **Pendiente real**: `vesp-linea-grafica-referencia.png` (usado como imagen Open Graph para compartir en redes) sigue mostrando visualmente la marca VESP anterior. Debe reemplazarse por una imagen OG de 1200×630 con la marca VUNEK antes de publicar.
+
+Verificado con `npm run build` (compila limpio) y visualmente en navegador, confirmando que "VUNEK" aparece correctamente en Header, Hero, Footer, Sobre Nosotros, Problemas y Sectores, y que "Método VESP" permanece intacto donde corresponde.
