@@ -1,17 +1,11 @@
 import Image from "next/image";
 import { assets, brand } from "@/lib/constants";
+import { NetworkMotif } from "@/components/NetworkMotif";
 
 export function AboutSection() {
   return (
     <section className="section-padding relative overflow-hidden bg-vesp-navyDeep text-white" id="sobre-vesp">
-      <Image
-        alt=""
-        aria-hidden="true"
-        className="absolute bottom-10 left-1/2 w-[1180px] max-w-none -translate-x-1/2 opacity-44"
-        height={260}
-        src={assets.horizon}
-        width={1600}
-      />
+      <NetworkMotif className="absolute bottom-10 left-1/2 w-[1180px] max-w-none -translate-x-1/2 opacity-44" />
       <div className="section-shell relative">
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div className="flex items-center gap-5">

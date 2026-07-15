@@ -1,22 +1,15 @@
-import Image from "next/image";
-import { assets, methodSteps } from "@/lib/constants";
+import { methodSteps } from "@/lib/constants";
 import { Card } from "@/components/ui/Card";
+import { NetworkMotif } from "@/components/NetworkMotif";
 
 export function MethodSection() {
   return (
     <section className="section-padding relative overflow-hidden bg-vesp-navy text-white" id="metodo">
-      <Image
-        alt=""
-        aria-hidden="true"
-        className="absolute left-1/2 top-9 w-[980px] max-w-none -translate-x-1/2 opacity-26"
-        height={260}
-        src={assets.horizon}
-        width={1600}
-      />
+      <NetworkMotif className="absolute left-1/2 top-9 w-[980px] max-w-none -translate-x-1/2 opacity-26" />
       <div className="section-shell relative">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold text-vesp-copper">Método propio</p>
-          <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">Método VESP</h2>
+          <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">Metodología VUNEK</h2>
           <p className="mt-5 text-lg leading-8 text-white/72">
             Una metodología para pasar de la estrategia a la implementación.
           </p>

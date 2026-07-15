@@ -2,24 +2,17 @@ import Image from "next/image";
 import { ArrowDownRight, ArrowRight, CheckCircle2 } from "lucide-react";
 import { assets, brand } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
+import { NetworkMotif } from "@/components/NetworkMotif";
 
 export function Hero() {
   return (
     <section className="hero-bg relative isolate overflow-hidden text-white" id="inicio">
       <div className="absolute inset-x-0 top-0 h-1 bg-vesp-copper" />
+      <NetworkMotif className="pointer-events-none absolute -bottom-16 left-1/2 z-0 w-[1200px] max-w-none -translate-x-1/2 opacity-70" />
       <Image
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-16 left-1/2 z-0 w-[1200px] max-w-none -translate-x-1/2 opacity-70"
-        height={260}
-        priority
-        src={assets.horizon}
-        width={1600}
-      />
-      <Image
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute right-[-120px] top-20 z-0 hidden w-[430px] max-w-[80vw] opacity-16 md:block md:right-[4vw] md:w-[520px]"
+        className="pointer-events-none absolute right-[-120px] top-1/2 z-0 hidden w-[400px] max-w-[80vw] -translate-y-1/2 opacity-16 md:block md:right-[4vw] md:w-[460px]"
         height={310}
         priority
         src={assets.icon}
@@ -56,7 +49,7 @@ export function Hero() {
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </Button>
             <Button href="#metodo" variant="secondary">
-              Conocer el Método VESP
+              Conocer la Metodología VUNEK
               <ArrowDownRight aria-hidden="true" className="h-4 w-4" />
             </Button>
           </div>

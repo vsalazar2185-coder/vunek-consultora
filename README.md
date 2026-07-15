@@ -171,7 +171,7 @@ Se detectó ruido de píxeles blancos casi opacos alrededor de los trazos del al
 
 ## Sexta iteración — rebrand VESP → VUNEK
 
-La marca cambió de nombre: **VESP → VUNEK**. Por decisión explícita del cliente, la metodología propia conserva su nombre histórico "Método VESP" (siglas Visión-Estrategia-Soluciones-Puesta en marcha) — no se tocó `MethodSection.tsx` ni el enlace "Conocer el Método VESP" del Hero.
+La marca cambió de nombre: **VESP → VUNEK**. En esta iteración, la metodología propia conservó su nombre histórico "Método VESP" (siglas Visión-Estrategia-Soluciones-Puesta en marcha) — no se tocó `MethodSection.tsx` ni el enlace "Conocer el Método VESP" del Hero. *(Actualización: en la séptima iteración el cliente pidió renombrar también la metodología a "Metodología VUNEK" — ver más abajo.)*
 
 **Cambios de texto** (todos vía `lib/constants.ts` salvo donde se indica):
 
@@ -189,3 +189,13 @@ La marca cambió de nombre: **VESP → VUNEK**. Por decisión explícita del cli
 - **Pendiente real**: `vesp-linea-grafica-referencia.png` (usado como imagen Open Graph para compartir en redes) sigue mostrando visualmente la marca VESP anterior. Debe reemplazarse por una imagen OG de 1200×630 con la marca VUNEK antes de publicar.
 
 Verificado con `npm run build` (compila limpio) y visualmente en navegador, confirmando que "VUNEK" aparece correctamente en Header, Hero, Footer, Sobre Nosotros, Problemas y Sectores, y que "Método VESP" permanece intacto donde corresponde.
+
+## Séptima iteración — ajustes post-lanzamiento
+
+Cambios pedidos tras revisar el sitio ya desplegado en producción:
+
+1. **Ícono decorativo del Hero cortado**: el símbolo grande semitransparente de la derecha se salía del contenedor (`overflow-hidden` de la sección) y se recortaba por abajo. Medido en el DOM: sección de 522px de alto, ícono llegando a 635px (32px de corte). Se cambió el posicionamiento de un offset fijo (`top-20`) a centrado vertical (`top-1/2 -translate-y-1/2`), más robusto ante distintos altos de viewport, y se redujo levemente el tamaño (520px → 460px de ancho) para dejar margen. `components/Hero.tsx`.
+2. **Metodología renombrada**: "Método VESP" → "Metodología VUNEK" en el botón del Hero y en el heading de `MethodSection.tsx`. Se mantuvieron las 4 tarjetas con las siglas V-E-S-P (Visión, Estrategia, Soluciones, Puesta en marcha) sin cambios, ya que ese framework de 4 pasos es válido independientemente del nombre comercial de la metodología.
+3. **Reemplazo del motivo decorativo de cerros**: por sugerencia propia (cerros no aportaban conceptualmente a "transformación digital", y eran redundante con contenido de identidad territorial ya retirado en la cuarta iteración). Se reemplazó `cumbre-horizonte.png` por un componente SVG propio (`components/NetworkMotif.tsx`) con un patrón de nodos y líneas conectadas en cobre institucional — mismo tratamiento visual (banda horizontal, baja opacidad) en Hero, `MethodSection` y `AboutSection`. Al ser SVG vectorial (no un archivo de imagen), se ve nítido a cualquier tamaño y no depende de assets externos. `assets.horizon` / `cumbre-horizonte.png` quedan sin uso en el sitio (el archivo se conserva en `public/assets/` por si se quiere revertir).
+
+Verificado con `npm run build` y visualmente en navegador (desktop 1440×900): ícono sin cortes, "Metodología VUNEK" visible en Hero y en la sección, red de nodos visible y sutil en las tres secciones donde antes estaban los cerros.
