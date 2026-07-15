@@ -11,7 +11,7 @@ const inter = Inter({
 
 const title = `${brand.name} | Estrategia, transformación digital y gestión organizacional`;
 const description =
-  `${brand.name} acompaña a instituciones, empresas y organizaciones en procesos de transformación digital, mejora de la gestión organizacional y desarrollo de soluciones aplicables.`;
+  `${brand.name} acompaña a instituciones, empresas y organizaciones desde el diagnóstico estratégico hasta la implementación de soluciones en transformación digital, gestión organizacional, datos e inteligencia artificial aplicada.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

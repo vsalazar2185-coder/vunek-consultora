@@ -199,3 +199,39 @@ Cambios pedidos tras revisar el sitio ya desplegado en producción:
 3. **Reemplazo del motivo decorativo de cerros**: por sugerencia propia (cerros no aportaban conceptualmente a "transformación digital", y eran redundante con contenido de identidad territorial ya retirado en la cuarta iteración). Se reemplazó `cumbre-horizonte.png` por un componente SVG propio (`components/NetworkMotif.tsx`) con un patrón de nodos y líneas conectadas en cobre institucional — mismo tratamiento visual (banda horizontal, baja opacidad) en Hero, `MethodSection` y `AboutSection`. Al ser SVG vectorial (no un archivo de imagen), se ve nítido a cualquier tamaño y no depende de assets externos. `assets.horizon` / `cumbre-horizonte.png` quedan sin uso en el sitio (el archivo se conserva en `public/assets/` por si se quiere revertir).
 
 Verificado con `npm run build` y visualmente en navegador (desktop 1440×900): ícono sin cortes, "Metodología VUNEK" visible en Hero y en la sección, red de nodos visible y sutil en las tres secciones donde antes estaban los cerros.
+
+## Octava iteración — footer simplificado a Chile
+
+`footerCountries` pasó de `"Chile · Paraguay · Colombia · América Latina"` a `"Chile"`. El listado anterior mezclaba países sin presencia real con la región genérica de forma redundante; Chile es donde se formaliza legalmente la consultora, y el resto del copy ya no depende de un argumento geográfico de alcance regional. `lib/constants.ts`.
+
+## Novena iteración — arquitectura Marca / Metodología / Ciclo VESP + contenido completo
+
+Revisión conceptual y textual integral del sitio (a partir de un análisis externo aportado por el cliente), enfocada en resolver la ambigüedad entre "Metodología VUNEK" y las siglas V-E-S-P, y en profesionalizar el copy de cada sección.
+
+**Arquitectura conceptual establecida:**
+
+- **VUNEK** = la marca.
+- **Metodología VUNEK** = el sistema integral de intervención (principios, diagnóstico, estrategia, diseño, acompañamiento, implementación, transferencia, medición).
+- **Ciclo VESP** = la estructura operativa de 4 etapas (Visión, Estrategia, Soluciones, Puesta en marcha) mediante la cual se aplica la Metodología VUNEK.
+- Frase puente explícita en `MethodSection.tsx`: *"La Metodología VUNEK se operacionaliza mediante el Ciclo VESP."* — deja claro que VESP no es una metodología competidora ni un acrónimo de VUNEK.
+
+**Cambios por sección** (todo el contenido nuevo vive en `lib/constants.ts` salvo donde se indica):
+
+1. **Nav**: `Método` → `Metodología`; se agrega `Nosotros` (`#sobre-vesp`), que antes no tenía entrada en el menú.
+2. **Hero**: botón "Conocer la Metodología VUNEK" → "Conocer la metodología" (más simple, evita redundancia ya que la sección de destino explica la relación Metodología/Ciclo en detalle).
+3. **Problemas**: heading cambiado de "Las organizaciones no necesitan más diagnósticos. Necesitan implementación." a "El diagnóstico solo genera valor cuando conduce a decisiones e implementación." — el original contradecía que el propio Ciclo VESP arranca con diagnóstico (etapa V). `problemCards` pasa de `string[]` a `{ title, description }[]`; cada tarjeta ahora muestra también una descripción. `components/ProblemSection.tsx`.
+4. **Propuesta de valor**: heading y párrafo reescritos (`brand.valuePropHeading`, `brand.valuePropParagraph`, reemplazan el antiguo `brand.commercial`) para no repetir literalmente el Hero. Pilares renombrados: "Estrategia clara" → "Claridad estratégica", "Implementación acompañada" → "Soluciones aplicables", "Resultados medibles" → "Implementación y medición", con descripciones más específicas.
+5. **Metodología / Ciclo VESP**: eyebrow "Método propio" → "Metodología propia"; se agregan dos párrafos introductorios, el bloque puente destacado (borde cobre) y el subtítulo "Ciclo VESP" antes de las 4 tarjetas. Las descripciones de cada etapa (V/E/S/P) se expandieron a dos oraciones. `components/MethodSection.tsx`.
+6. **Soluciones**: `solutions` (lista plana de 9 ítems) se reemplaza por `solutionCategories` (4 categorías: Estrategia y gestión, Transformación digital e IA, Capacidades y adopción, Gestión académica e innovación educativa), cada una con ícono propio y una lista de 6 ítems con check. Rediseño completo de `components/SolutionsSection.tsx` (de grid de tarjetas a 4 bloques agrupados).
+7. **Sectores**: cada sector gana una descripción de una línea (antes solo título). `components/SectorsSection.tsx` ajustado para mostrarla.
+8. **Sobre Nosotros**: párrafo único → 3 párrafos (`brand.aboutParagraphs`), el segundo menciona explícitamente el equipo multidisciplinario (pedido del cliente). Se agrega una sección nueva "Propósito institucional" con Misión y Visión (`brand.mission`, `brand.vision`) en dos tarjetas, y "Nuestros valores" con 4 tarjetas (Rigor, Aplicabilidad, Cercanía, Transparencia — nuevo export `values`). Reescritura completa de `components/AboutSection.tsx`.
+9. **Contacto**: párrafo introductorio reescrito para explicar que la primera conversación es exploratoria (contexto, prioridades, alcance preliminar). `components/ContactSection.tsx`.
+10. **Footer**: se agrega la línea "Metodología VUNEK · Ciclo VESP" entre el lema y el país. `components/Footer.tsx`.
+11. **SEO**: meta description actualizada para mencionar el recorrido completo "desde el diagnóstico estratégico hasta la implementación". `app/layout.tsx`.
+
+**Decisiones de optimización sobre la propuesta original:**
+
+- El documento del cliente sugería agregar "ejemplos de intervención" a cada servicio (punto 5.6 de sus instrucciones), pero su propio contenido final no los incluía. Se siguió el contenido final (solo descripción + entregables) para no introducir casos que pudieran leerse como reales sin serlo — consistente con la restricción de "no inventar casos ni clientes" vigente desde la primera iteración.
+- Los "ejemplos de intervención" y demás contenido se implementaron adaptando el HTML/Tailwind existente (tarjetas, spacing, paleta) en vez de rediseñar los componentes desde cero.
+
+Verificado con `npm run build` (compila limpio, tipos validados) y por inspección exhaustiva del DOM en navegador real: se confirmó texto exacto de cada sección (nav, Hero, Problemas, Propuesta de valor, Metodología/Ciclo VESP, Soluciones por categoría, Sectores con descripción, Misión/Visión/Valores, Contacto, Footer) y ausencia de solapamientos verticales entre encabezados en las secciones rediseñadas. No se pudo capturar screenshot en esta sesión por una falla intermitente de la herramienta de preview (no relacionada con el código).

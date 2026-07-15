@@ -49,7 +49,7 @@ export function Hero() {
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </Button>
             <Button href="#metodo" variant="secondary">
-              Conocer la Metodología VUNEK
+              Conocer la metodología
               <ArrowDownRight aria-hidden="true" className="h-4 w-4" />
             </Button>
           </div>

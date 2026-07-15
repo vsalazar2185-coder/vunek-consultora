@@ -49,8 +49,10 @@ export function ContactSection() {
               Conversemos sobre el próximo desafío.
             </h2>
             <p className="mt-6 text-lg leading-8 text-vesp-ink/74">
-              Si tu organización necesita ordenar su estrategia, activar transformación digital, mejorar su gestión o
-              implementar soluciones aplicables, podemos iniciar con una conversación exploratoria.
+              La primera conversación nos permitirá comprender el contexto de la organización, identificar sus
+              principales prioridades y explorar posibles formas de intervención. Si tu organización necesita ordenar
+              su estrategia, activar su transformación digital, mejorar su gestión o implementar soluciones
+              aplicables, conversemos.
             </p>
 
             <a

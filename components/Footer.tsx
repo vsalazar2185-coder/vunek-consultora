@@ -15,7 +15,8 @@ export function Footer() {
             </div>
             <p className="mt-3 max-w-xl text-white/72">{brand.descriptor}</p>
             <p className="mt-2 font-semibold text-vesp-copper">{brand.motto}</p>
-            <p className="mt-5 text-sm text-white/56">{footerCountries}</p>
+            <p className="mt-4 text-sm text-white/56">Metodología {brand.name} · Ciclo VESP</p>
+            <p className="mt-1 text-sm text-white/56">{footerCountries}</p>
           </div>
 
           <nav aria-label="Navegación de pie" className="flex flex-wrap gap-4 md:justify-end">

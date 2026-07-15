@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { assets, brand } from "@/lib/constants";
+import { assets, brand, values } from "@/lib/constants";
+import { Card } from "@/components/ui/Card";
 import { NetworkMotif } from "@/components/NetworkMotif";
 
 export function AboutSection() {
@@ -24,7 +25,42 @@ export function AboutSection() {
 
           <div>
             <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">{brand.aboutHeading}</h2>
-            <p className="mt-6 text-lg leading-8 text-white/74">{brand.aboutParagraph}</p>
+            {brand.aboutParagraphs.map((paragraph) => (
+              <p className="mt-5 text-lg leading-8 text-white/74" key={paragraph}>
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-16">
+          <p className="text-sm font-semibold text-vesp-copper">Propósito institucional</p>
+          <div className="mt-4 grid gap-4 lg:grid-cols-2">
+            <Card className="p-6" tone="dark">
+              <h3 className="text-xl font-semibold">Misión</h3>
+              <p className="mt-3 leading-7 text-white/74">{brand.mission}</p>
+            </Card>
+            <Card className="p-6" tone="dark">
+              <h3 className="text-xl font-semibold">Visión</h3>
+              <p className="mt-3 leading-7 text-white/74">{brand.vision}</p>
+            </Card>
+          </div>
+        </div>
+
+        <div className="mt-10">
+          <p className="text-sm font-semibold text-vesp-copper">Nuestros valores</p>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            {values.map(({ Icon, description, title }) => (
+              <Card className="flex gap-4 p-5" key={title} tone="dark">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-white/10 text-vesp-copper">
+                  <Icon aria-hidden="true" className="h-5 w-5" />
+                </span>
+                <div>
+                  <h3 className="font-semibold text-white">{title}</h3>
+                  <p className="mt-1.5 text-sm leading-6 text-white/68">{description}</p>
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
       </div>

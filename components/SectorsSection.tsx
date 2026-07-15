@@ -17,12 +17,15 @@ export function SectorsSection() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            {sectors.map(({ Icon, title }) => (
-              <div className="flex min-h-[112px] items-center gap-4 rounded-lg border border-vesp-navy/10 bg-white p-5" key={title}>
+            {sectors.map(({ Icon, description, title }) => (
+              <div className="flex min-h-[140px] items-start gap-4 rounded-lg border border-vesp-navy/10 bg-white p-5" key={title}>
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-vesp-navy/6 text-vesp-navy">
                   <Icon aria-hidden="true" className="h-5 w-5" />
                 </span>
-                <h3 className="text-lg font-semibold text-vesp-navy">{title}</h3>
+                <div>
+                  <h3 className="text-lg font-semibold text-vesp-navy">{title}</h3>
+                  <p className="mt-1.5 text-sm leading-6 text-vesp-ink/68">{description}</p>
+                </div>
               </div>
             ))}
           </div>

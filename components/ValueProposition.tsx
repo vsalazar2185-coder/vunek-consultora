@@ -9,9 +9,9 @@ export function ValueProposition() {
           <div>
             <p className="text-sm font-semibold text-vesp-copper">Propuesta de valor</p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight text-vesp-navy sm:text-4xl">
-              Transformamos desafíos organizacionales en soluciones aplicables.
+              {brand.valuePropHeading}
             </h2>
-            <p className="mt-6 text-lg leading-8 text-vesp-ink/74">{brand.commercial}</p>
+            <p className="mt-6 text-lg leading-8 text-vesp-ink/74">{brand.valuePropParagraph}</p>
           </div>
 
           <div className="grid gap-4">
