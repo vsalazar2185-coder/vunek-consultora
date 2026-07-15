@@ -22,16 +22,16 @@ export function MethodSection() {
 
         <div className="mt-10 max-w-3xl rounded-lg border border-vesp-copper/30 bg-vesp-navyDeep p-6">
           <p className="text-xl font-semibold leading-tight text-vesp-copper">
-            La Metodología VUNEK se operacionaliza mediante el Ciclo VESP.
+            La Metodología VUNEK se operacionaliza mediante el Ciclo V·E·S·P.
           </p>
           <p className="mt-3 leading-7 text-white/68">
-            El Ciclo VESP organiza cada intervención en cuatro etapas conectadas. No constituye una metodología
+            El Ciclo V·E·S·P organiza cada intervención en cuatro etapas conectadas. No constituye una metodología
             diferente: es la estructura que permite aplicar la Metodología VUNEK desde la comprensión del desafío
             hasta la puesta en marcha y mejora continua.
           </p>
         </div>
 
-        <p className="mt-12 text-sm font-semibold text-vesp-copper">Ciclo VESP</p>
+        <p className="mt-12 text-sm font-semibold text-vesp-copper">Ciclo V·E·S·P</p>
 
         <div className="relative mt-4 grid gap-4 lg:grid-cols-4">
           <div className="copper-line absolute left-8 right-8 top-14 hidden h-px lg:block" />

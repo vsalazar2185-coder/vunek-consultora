@@ -59,10 +59,10 @@ export const assets = {
 export const navItems = [
   { label: "Inicio", href: "#inicio" },
   { label: "Metodología", href: "#metodo" },
+  { label: "Nosotros", href: "#sobre-vesp" },
   { label: "Servicios", href: "#servicios" },
   { label: "Soluciones", href: "#soluciones" },
   { label: "Sectores", href: "#sectores" },
-  { label: "Nosotros", href: "#sobre-vesp" },
   { label: "Contacto", href: "#contacto" }
 ];
 

@@ -19,10 +19,10 @@ export default function Home() {
         <ProblemSection />
         <ValueProposition />
         <MethodSection />
+        <AboutSection />
         <ServicesSection />
         <SolutionsSection />
         <SectorsSection />
-        <AboutSection />
         <ContactSection />
       </main>
       <Footer />
