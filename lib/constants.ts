@@ -178,6 +178,6 @@ export const contactNeeds = [
   "Otra necesidad"
 ];
 
-export const footerCountries = "Chile · Paraguay · Colombia · América Latina";
+export const footerCountries = "Chile";
 
 export const decorativeIcon = Sparkles;
