@@ -24,7 +24,6 @@ export function ServicesSection() {
                 </span>
                 <div>
                   <h3 className="text-xl font-semibold leading-7 text-vesp-navy">{title}</h3>
-                  <p className="mt-4 leading-7 text-vesp-ink/68">{description}</p>
                   <p className="mt-5 rounded-md bg-vesp-navy/5 p-4 text-sm font-medium leading-6 text-vesp-navy/78">
                     {deliverable}
                   </p>
