@@ -1,4 +1,5 @@
 import { AboutSection } from "@/components/AboutSection";
+import { BrandAvatar } from "@/components/BrandAvatar";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -26,6 +27,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
+      <BrandAvatar />
     </>
   );
 }
