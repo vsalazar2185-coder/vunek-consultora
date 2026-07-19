@@ -25,7 +25,7 @@ export function Hero() {
             <Image
               alt=""
               aria-hidden="true"
-              className="h-14 w-auto sm:h-16 lg:h-20"
+              className="h-14 w-auto animate-avatar-hero sm:h-16 lg:h-20"
               height={310}
               priority
               src={assets.icon}
